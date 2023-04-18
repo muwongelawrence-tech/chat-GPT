@@ -1,3 +1,4 @@
+import { useSession } from 'next-auth/react';
 import React from 'react'
 
 type Props = {
@@ -5,6 +6,9 @@ type Props = {
 };
 
 function Chat({ chatId } : Props) {
+
+  const { data : session } = useSession()
+  
   return (
     <div className='flex-1'>
        chat content
