@@ -61,7 +61,7 @@ function ChatInput({chatId}: Props) {
                  session
             })
         }).then(() => {
-            // Toast the successful message
+            // Toast the successful message.........
             toast.success('chatGpt has responded!!', {
                 id: notification,
             })
@@ -73,7 +73,7 @@ function ChatInput({chatId}: Props) {
   return (
     <div className='bg-gray-700/50 text-gray-400 rounded-lg text-sm'>
       <form 
-       onSubmit={ sendMessage}
+       onSubmit={ sendMessage }
        className='p-5 space-x-5 flex'>
         <input 
           type="text"
