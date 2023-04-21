@@ -3,10 +3,11 @@ import { BoltIcon, ExclamationTriangleIcon, SunIcon } from '@heroicons/react/24/
 
 function HomePage() {
   return (
-    <div className=' flex flex-col items-center justify-center h-screen  px-2  text-white'>
-        <h1 className='text-5xl font-bold mb-20 '> <span className='text-cyan-300'>Lawrence</span>GPT </h1>
+    <div className='flex flex-col w-full items-center justify-center h-screen  px-2  text-white overflow-hidden'>
+
+     <h1 className='text-2xl md:text-5xl font-bold mb-20 '> <span className='text-cyan-300'>Lawrence</span>GPT </h1>
      
-       <div className=' flex text-center space-x-3'>
+       <div className=' flex  flex-col md:flex-row w-full text-center space-x-3 pb-10 overflow-y-scroll md:overflow-y-hidden'>
            <div className=''>
             <div className='flex flex-col items-center justify-center mb-5 '>
                 {/* sun Icon  */}
