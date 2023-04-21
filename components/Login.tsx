@@ -1,4 +1,5 @@
 "use client";
+
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 
@@ -15,7 +16,7 @@ function Login() {
       <button 
       onClick = { () => signIn("") }
       className="text-white font-bold text-sm animate-pulse uppercase"> 
-        Sign In to use ChatGPT
+        Sign In to use LawrenceGPT
     </button>
     </div>
   );
