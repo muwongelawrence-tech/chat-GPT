@@ -2,7 +2,7 @@
 
 import { collection, orderBy, query } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 import Message from "./Message";
@@ -14,6 +14,8 @@ type Props = {
 
 function Chat({ chatId }: Props) {
   const { data: session } = useSession();
+
+  const scrollRef = useRef();
 
   const [messages] = useCollection(
     session &&
@@ -30,8 +32,16 @@ function Chat({ chatId }: Props) {
       )
   );
 
+
+  // useEffect(() => {
+	// 	scrollRef.current?.lastElementChild?.scrollIntoView({
+	// 		behavior: "smooth",
+	// 		inline: "nearest",
+	// 	});
+	// }, [messages])
+
   return (
-    <div className="flex-1 overflow-y-auto overflow-x-hidden">
+    <div  className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide mb-10">
       {messages?.empty && (
         <>
           <p className="mt-10 text-center text-white">
